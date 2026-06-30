@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 1. Fetch & Render Portfolio Configuration
-  fetch('/api/portfolio')
+  fetch('data/portfolio.json')
     .then(res => {
-      if (!res.ok) throw new Error('API fetch failed');
+      if (!res.ok) throw new Error('Data fetch failed');
       return res.json();
     })
     .then(data => {
