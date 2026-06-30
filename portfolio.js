@@ -5,6 +5,136 @@
 document.addEventListener('DOMContentLoaded', () => {
   let portfolioData = null;
 
+  // Local fallback data in case of CORS block when opening index.html directly via file:// protocol
+  const fallbackData = {
+    "profile": {
+      "name": "Kalamalla Sudheer Basha",
+      "title": "Data Analyst & Full Stack Developer",
+      "email": "ksudheerbasha721@gmail.com",
+      "phone": "+91 7981292208",
+      "location": "Hyderabad, Telangana",
+      "github": "https://github.com/Sudheer-basha",
+      "linkedin": "https://www.linkedin.com/in/kalamalla-sudheer-basha-43793b298/",
+      "avatar": "uploads/avatar.jpg",
+      "resumeUrl": "uploads/Kalamalla_Sudheer_Basha_Resume.pdf",
+      "bio": "Motivated MCA graduate and IT professional with hands-on experience in full life-cycle software implementation, business & technology solutions, and business user engagement. Proficient in Python, SQL, React.js, FastAPI, Power BI, and Docker.",
+      "aboutText": "Hello! I am Kalamalla Sudheer Basha, a motivated computer applications postgraduate and data analyst. I love writing clean, maintainable code, building intelligent systems, and solving complex data processing challenges. My primary technical stack revolves around Python, SQL, React.js, FastAPI, Power BI, and Docker. In my spare time, I explore AI models, LLMs, and RAG architectures to construct intelligent digital assistants and analytics dashboards."
+    },
+    "theme": {
+      "primary": "#007bff",
+      "accent": "#00b4d8",
+      "gradientStart": "#007bff",
+      "gradientEnd": "#6f42c1"
+    },
+    "skills": [
+      { "category": "Backend", "name": "Python", "rating": 92 },
+      { "category": "Database", "name": "SQL", "rating": 90 },
+      { "category": "Frontend", "name": "JavaScript", "rating": 82 },
+      { "category": "Backend", "name": "FastAPI", "rating": 90 },
+      { "category": "Database", "name": "PostgreSQL 15", "rating": 88 },
+      { "category": "Tools", "name": "Docker & Compose", "rating": 85 },
+      { "category": "Tools", "name": "Power BI & Tableau", "rating": 90 },
+      { "category": "Backend", "name": "RAG & LLM Eng.", "rating": 85 },
+      { "category": "Tools", "name": "GitHub Actions", "rating": 80 },
+      { "category": "Tools", "name": "Pandas & NumPy", "rating": 90 },
+      { "category": "Database", "name": "SQLite3", "rating": 90 }
+    ],
+    "projects": [
+      {
+        "id": "project-tutor",
+        "title": "AI Data Science Tutor",
+        "tech": "FastAPI, React.js, PostgreSQL, Docker, Gemini API",
+        "description": "Developed a mastery-based learning management system enforcing progression locks to guarantee concept mastery. Integrated a context-aware AI Tutor chat utilizing the Gemini 2.5 Flash API with RAG prompting based on lesson materials for instant concept explanations and query resolution.",
+        "challenge": "Implementing progression locks to guarantee concept mastery and automated script feedback.",
+        "solution": "Engineered an automated Python script evaluator providing line-by-line constructive feedback, and a dynamic PDF certificate generator using ReportLab's vector coordinates.",
+        "future": "Integrate more coding languages and expand course catalogs.",
+        "liveLink": "#",
+        "githubLink": "https://github.com",
+        "screenshot": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        "id": "project-resume",
+        "title": "AI Resume Agent",
+        "tech": "FastAPI, Tailwind CSS, SQLite, Docker, Groq API (Llama 3.3)",
+        "description": "Engineered an automated ATS customizer that extracts resume text and compares it against Job Descriptions using a pre-check filter to flag skill and experience gaps before application.",
+        "challenge": "Handling complex parsing of PDFs and rewriting bullet points while maintaining factual consistency.",
+        "solution": "Leveraged Groq's Llama 3.3 70B model to dynamically rewrite and optimize candidate summary and bullet points to match target job descriptions while ensuring factual consistency. Built a local CRM database dashboard tracking companies, role match scores, application status, and automated Word file generation.",
+        "future": "Integrate multi-file batch parsing and template customization.",
+        "liveLink": "#",
+        "githubLink": "https://github.com",
+        "screenshot": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop"
+      },
+      {
+        "id": "project-jobpulse",
+        "title": "JobPulse",
+        "tech": "FastAPI, HTML5, CSS3, SQLite, GitHub Actions, python-jobspy, Pandas",
+        "description": "Designed a web-based Job Search CRM and automation scanner crawling job vacancies across major job boards and ATS platforms. Implemented dynamic experience filtering and key-phrase rules to eliminate mid-to-senior roles, focusing exclusively on entry-level IT and developer roles.",
+        "challenge": "Relevance ranking of crawled job postings relative to candidate background.",
+        "solution": "Created a custom RAG search capability using a TF-IDF Cosine Similarity engine to query jobs and rank vacancies by relevance score using candidate resume text.",
+        "future": "Support automated background scraping on a cron scheduler and WhatsApp alerts.",
+        "liveLink": "tracker.html",
+        "githubLink": "https://github.com",
+        "screenshot": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=800&auto=format&fit=crop"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master of Computer Applications (MCA)",
+        "institution": "Spirits College of MCA, Kadapa, AP",
+        "period": "2024 - 2026",
+        "score": "Score: 8.4 / 10.0"
+      },
+      {
+        "degree": "B.Sc. in Mathematics, Statistics, and Computer Science",
+        "institution": "Loyola Degree College, Pulivendula, AP",
+        "period": "2021 - 2024",
+        "score": "Score: 7.1 / 10.0"
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Python Intern Developer",
+        "issuer": "ShadowMinds Technologies",
+        "date": "2024",
+        "verifyLink": "#",
+        "badge": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=150&auto=format&fit=crop"
+      },
+      {
+        "title": "Data Analyst Simulation",
+        "issuer": "Forage",
+        "date": "2024",
+        "verifyLink": "#",
+        "badge": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=150&auto=format&fit=crop"
+      },
+      {
+        "title": "Python for Data Science",
+        "issuer": "Cognitive Class",
+        "date": "2023",
+        "verifyLink": "#",
+        "badge": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=150&auto=format&fit=crop"
+      }
+    ],
+    "achievements": [
+      "Engaged with real-world business users to design and deliver automation scripts to non-technical stakeholders.",
+      "Integrated a TF-IDF Cosine Similarity engine for advanced resume relevance ranking in JobPulse.",
+      "Engineered custom script evaluators providing constructive feedback on code submissions."
+    ],
+    "services": [
+      {
+        "title": "Data Analytics & Pipelines",
+        "description": "Orchestrating high-performance data processing pipelines using Pandas, NumPy, and databases like PostgreSQL."
+      },
+      {
+        "title": "AI & RAG Engineering",
+        "description": "Integrating LLMs (Llama 3.3, Gemini) using context-aware RAG prompts and vector similarities."
+      },
+      {
+        "title": "Full Stack API Development",
+        "description": "Building light, rapid endpoints using FastAPI coupled with React.js or responsive Bootstrap 5 views."
+      }
+    ]
+  };
+
   // Initialize Lucide Icons
   if (typeof lucide !== 'undefined') {
     lucide.createIcons();
@@ -36,9 +166,24 @@ document.addEventListener('DOMContentLoaded', () => {
       initSkillsSphere(data.skills);
     })
     .catch(err => {
-      console.error('Error loading portfolio config:', err);
-      document.getElementById('hero-short-bio').innerText = 
-        'Welcome! I am a computer applications graduate and full stack developer. Explore my projects and profile.';
+      console.warn('Fetch failed, using local fallback data:', err);
+      portfolioData = fallbackData;
+      renderProfile(fallbackData.profile);
+      renderServices(fallbackData.services);
+      renderSkills(fallbackData.skills);
+      renderProjects(fallbackData.projects);
+      renderEducation(fallbackData.education);
+      renderCertifications(fallbackData.certifications);
+      renderAchievements(fallbackData.achievements);
+
+      // Re-trigger icon rendering for dynamically added lucide elements
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      // Initialize dynamic animations after loading content
+      initScrollAnimations();
+      initSkillsSphere(fallbackData.skills);
     });
 
   // 2. Render Functions
