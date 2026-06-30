@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "solution": "Engineered an automated Python script evaluator providing line-by-line constructive feedback, and a dynamic PDF certificate generator using ReportLab's vector coordinates.",
         "future": "Integrate more coding languages and expand course catalogs.",
         "liveLink": "#",
-        "githubLink": "https://github.com",
+        "githubLink": "https://github.com/Sudheer-basha",
         "screenshot": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop"
       },
       {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "solution": "Leveraged Groq's Llama 3.3 70B model to dynamically rewrite and optimize candidate summary and bullet points to match target job descriptions while ensuring factual consistency. Built a local CRM database dashboard tracking companies, role match scores, application status, and automated Word file generation.",
         "future": "Integrate multi-file batch parsing and template customization.",
         "liveLink": "#",
-        "githubLink": "https://github.com",
+        "githubLink": "https://github.com/Sudheer-basha",
         "screenshot": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop"
       },
       {
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "solution": "Created a custom RAG search capability using a TF-IDF Cosine Similarity engine to query jobs and rank vacancies by relevance score using candidate resume text.",
         "future": "Support automated background scraping on a cron scheduler and WhatsApp alerts.",
         "liveLink": "tracker.html",
-        "githubLink": "https://github.com",
+        "githubLink": "https://github.com/Sudheer-basha",
         "screenshot": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=800&auto=format&fit=crop"
       }
     ],
@@ -96,21 +96,21 @@ document.addEventListener('DOMContentLoaded', () => {
         "title": "Python Intern Developer",
         "issuer": "ShadowMinds Technologies",
         "date": "2024",
-        "verifyLink": "#",
+        "verifyLink": "https://whiteandbox.com/authenticate-internship/verifying.php?certid=SHA09WB0123BLR784PYINTERN",
         "badge": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=150&auto=format&fit=crop"
       },
       {
         "title": "Data Analyst Simulation",
         "issuer": "Forage",
         "date": "2024",
-        "verifyLink": "#",
+        "verifyLink": "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_68e6968aee6654444a8351b2_1764467985878_completion_certificate.pdf",
         "badge": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=150&auto=format&fit=crop"
       },
       {
         "title": "Python for Data Science",
         "issuer": "Cognitive Class",
         "date": "2023",
-        "verifyLink": "#",
+        "verifyLink": "https://courses.yl-ptech.skillsnetwork.site/certificates/9f1a13f99cf24ebf9f6669df5e4d9169",
         "badge": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=150&auto=format&fit=crop"
       }
     ],
