@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalamalla Sudheer Basha | 3D Interactive Portfolio</title>
+  <meta name="description" content="Immersive 3D Student Portfolio of Kalamalla Sudheer Basha, MCA Graduate and Full Stack Developer. Explore interactive 3D workspaces, skills sphere, and outreach CRM integration.">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Local Styles -->
+  <link rel="stylesheet" href="/portfolio.css">
+</head>
+<body class="light-theme">
+
+  <!-- Full-Screen 3D background canvas -->
+  <canvas id="three-hero-canvas" class="hero-bg-canvas"></canvas>
+
+  <!-- Custom Scroll Progress Bar -->
+  <div id="scroll-progress-bar" class="scroll-progress"></div>
+
+  <!-- Header / Glassmorphic Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top glass-navbar" id="main-nav">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#hero" id="nav-logo">
+          <span class="logo-badge me-2">KSB</span>
+          <span class="logo-text fw-bold">Sudheer Basha</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation" id="nav-toggle-btn">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item"><a class="nav-link active" href="#hero" id="link-hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about" id="link-about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills" id="link-skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects" id="link-projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#timeline" id="link-timeline">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#certifications" id="link-certs">Certificates</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact" id="link-contact">Contact</a></li>
+            <li class="nav-item ms-lg-3 d-flex align-items-center gap-2">
+              <a href="/portfolio-admin.html" class="btn btn-outline-dark btn-sm rounded-pill px-3" id="admin-panel-btn">
+                <i data-lucide="settings" class="icon-sm me-1"></i>Admin
+              </a>
+              <a href="#" class="btn btn-primary btn-sm rounded-pill px-3 shadow-sm glow-button" id="resume-download-btn" target="_blank">
+                <i data-lucide="download" class="icon-sm me-1"></i>Resume
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section d-flex align-items-center position-relative overflow-hidden">
+    <!-- Ambient Background Shapes -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <div class="container position-relative z-3">
+      <div class="row align-items-center min-vh-100 py-5">
+        <!-- Left Content Column -->
+        <div class="col-lg-6 text-center text-lg-start hero-text-col" id="hero-intro-col">
+          <div class="badge-opportunity mb-3 d-inline-flex align-items-center gap-2 border px-3 py-1.5 rounded-pill bg-white text-dark shadow-sm" id="opportunity-badge">
+            <span class="pulse-indicator"></span>
+            <span class="fw-semibold text-uppercase tracking-wider fs-7">Available for Opportunities</span>
+          </div>
+          <h1 class="hero-title display-4 fw-extrabold mb-3 text-gradient-primary" id="hero-main-name">
+            K. Sudheer Basha
+          </h1>
+          <h2 class="hero-subtitle h3 fw-semibold text-dark-gray mb-4" id="hero-role-carousel">
+            I am <span class="typing-text text-primary" id="typed-text-target"></span>
+          </h2>
+          <p class="hero-description lead text-muted mb-5" id="hero-short-bio">
+            Fetching profile details...
+          </p>
+          
+          <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3 mb-5" id="hero-actions">
+            <a href="#projects" class="btn btn-primary btn-lg rounded-pill px-4 shadow shadow-hover glow-button" id="hero-cta-projects">
+              View Work <i data-lucide="arrow-right" class="icon-md ms-2"></i>
+            </a>
+            <a href="#contact" class="btn btn-outline-dark btn-lg rounded-pill px-4" id="hero-cta-contact">
+              Let's Talk <i data-lucide="message-square" class="icon-md ms-2"></i>
+            </a>
+          </div>
+
+          <div class="d-flex justify-content-center justify-content-lg-start gap-4 social-links-row" id="hero-social-links">
+            <a href="#" class="social-circle shadow-sm" id="hero-github-link" target="_blank" aria-label="GitHub Profile">
+              <i data-lucide="github"></i>
+            </a>
+            <a href="#" class="social-circle shadow-sm" id="hero-linkedin-link" target="_blank" aria-label="LinkedIn Profile">
+              <i data-lucide="linkedin"></i>
+            </a>
+            <a href="#" class="social-circle shadow-sm" id="hero-email-link" aria-label="Send Email">
+              <i data-lucide="mail"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right 3D Scene Column -->
+        <div class="col-lg-6 position-relative mt-5 mt-lg-0 hero-canvas-col" id="hero-canvas-col">
+          <div class="canvas-3d-wrapper shadow-lg d-flex flex-column" id="hero-canvas-wrapper" style="height: 380px; background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(16px);">
+            <div class="canvas-glass-overlay d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+              <div class="window-dots d-flex gap-1.5">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="window-title fs-8 text-muted fw-medium font-monospace">data_analysis.py</div>
+              <div class="window-actions"><i data-lucide="terminal" class="icon-xs text-muted"></i></div>
+            </div>
+            <!-- Active Python Console Output simulation container -->
+            <div class="flex-grow-1 p-3 font-monospace text-start fs-8 scroll-console overflow-hidden" id="analytics-console" style="color: #212529; opacity: 0.85; line-height: 1.8; max-height: 320px;">
+              <!-- Dynamic simulation entries will be pushed here -->
+            </div>
+            
+            <!-- Quick Floating Tech Stack Icons -->
+            <div class="floating-tech html-logo shadow-sm" title="Data Visualization"><i data-lucide="bar-chart-3" class="text-primary"></i></div>
+            <div class="floating-tech js-logo shadow-sm" title="SQL Databases"><i data-lucide="database" class="text-info"></i></div>
+            <div class="floating-tech node-logo shadow-sm" title="AI & Machine Learning"><i data-lucide="brain" class="text-purple" style="color: #6f42c1;"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section-padding position-relative">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-5 mb-lg-0 text-center position-relative about-img-col" id="about-img-wrapper">
+          <div class="about-image-card shadow-lg mx-auto">
+            <img src="" id="about-avatar" alt="Kalamalla Sudheer Basha" class="img-fluid rounded-4 object-fit-cover shadow">
+            <div class="about-experience-badge glass-card shadow-sm p-3 position-absolute border" id="experience-badge-widget">
+              <h3 class="fw-bold mb-0 text-gradient-primary" id="exp-val">2026</h3>
+              <p class="text-muted small mb-0 font-monospace">MCA Graduate</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 ps-lg-5 about-text-col" id="about-details-col">
+          <span class="section-tag" id="tag-about-sec">Discover</span>
+          <h2 class="section-title fw-bold mb-4" id="title-about-sec">About Me</h2>
+          <p class="lead text-dark-gray mb-4" id="about-bio-text">
+            Loading introduction...
+          </p>
+          <div class="row g-4 mb-4" id="about-quick-grid">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-3 border p-3 rounded-4 bg-white shadow-sm">
+                <div class="quick-icon-box bg-light text-primary rounded-3 p-2.5">
+                  <i data-lucide="graduation-cap"></i>
+                </div>
+                <div>
+                  <h4 class="h6 text-muted mb-0 fw-semibold">Education</h4>
+                  <p class="mb-0 fw-bold text-dark fs-7">MCA Post Graduate</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-3 border p-3 rounded-4 bg-white shadow-sm">
+                <div class="quick-icon-box bg-light text-primary rounded-3 p-2.5">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div>
+                  <h4 class="h6 text-muted mb-0 fw-semibold">Location</h4>
+                  <p class="mb-0 fw-bold text-dark fs-7" id="about-location-val">Loading...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-top pt-4" id="about-services-block">
+            <h4 class="h6 text-muted mb-3 fw-bold text-uppercase tracking-wider">What I Offer</h4>
+            <div class="row g-3" id="services-target">
+              <!-- Services injected here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section-padding bg-light-gray position-relative">
+    <div class="container">
+      <div class="text-center mb-5" id="skills-header">
+        <span class="section-tag">Competencies</span>
+        <h2 class="section-title fw-bold">My Skills</h2>
+      </div>
+
+      <div class="row align-items-center">
+        <!-- Progress Bars Column -->
+        <div class="col-lg-6 mb-5 mb-lg-0 skills-progress-col" id="skills-progress-col">
+          <div class="glass-card border p-4 shadow-sm" id="skills-container-card">
+            <h3 class="h5 fw-bold mb-4 d-flex align-items-center gap-2">
+              <i data-lucide="sliders" class="text-primary"></i> Skill Map
+            </h3>
+            <div class="d-flex flex-column gap-3.5" id="skills-bars-target">
+              <!-- Skills progress bars dynamically injected -->
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Interactive Tag Sphere Canvas Column -->
+        <div class="col-lg-6 text-center skills-sphere-col" id="skills-sphere-col">
+          <div class="skills-sphere-wrapper mx-auto position-relative">
+            <canvas id="skills-sphere-canvas" width="500" height="500" class="w-100 h-100"></canvas>
+            <div class="sphere-instructions-overlay position-absolute bottom-0 start-50 translate-middle-x bg-white px-3 py-1.5 rounded-pill shadow-sm border small text-muted d-flex align-items-center gap-2">
+              <i data-lucide="move" class="icon-sm"></i> Click & Drag to Orbit Sphere
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section-padding">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end mb-5" id="projects-header">
+        <div>
+          <span class="section-tag">Works</span>
+          <h2 class="section-title fw-bold mb-0">Featured Projects</h2>
+        </div>
+        <div class="mt-3 mt-md-0 font-monospace text-muted fs-7">
+          Integration Active: LinkedIn Outreach CRM
+        </div>
+      </div>
+
+      <div class="row g-4" id="projects-grid-target">
+        <!-- Projects cards dynamically injected -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Timeline Section -->
+  <section id="timeline" class="section-padding bg-light-gray">
+    <div class="container">
+      <div class="text-center mb-5" id="timeline-header">
+        <span class="section-tag">Journey</span>
+        <h2 class="section-title fw-bold">Educational Timeline</h2>
+      </div>
+
+      <div class="timeline-container position-relative py-4" id="timeline-flow">
+        <div class="timeline-line"></div>
+        <div id="education-timeline-target">
+          <!-- Timeline elements dynamically injected -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5" id="certs-header">
+        <span class="section-tag">Credentials</span>
+        <h2 class="section-title fw-bold mb-3">Certifications</h2>
+        
+        <!-- Filter Pills -->
+        <div class="d-flex justify-content-center flex-wrap gap-2 mt-4" id="cert-filter-pills">
+          <button class="btn btn-outline-primary btn-sm rounded-pill px-3 active" data-filter="all" id="btn-filter-all">All</button>
+          <button class="btn btn-outline-primary btn-sm rounded-pill px-3" data-filter="Udemy" id="btn-filter-udemy">Udemy</button>
+          <button class="btn btn-outline-primary btn-sm rounded-pill px-3" data-filter="freeCodeCamp" id="btn-filter-fcc">freeCodeCamp</button>
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-center" id="certifications-grid-target">
+        <!-- Certifications cards injected -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="section-padding bg-light-gray">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-5 mb-lg-0 achievements-text-col" id="achievements-intro-col">
+          <span class="section-tag">Milestones</span>
+          <h2 class="section-title fw-bold mb-4">Key Achievements</h2>
+          <p class="text-muted lead mb-4">
+            Highlights of academic pursuits, algorithm mastery, and hackathon accomplishments throughout my computer application post-graduation.
+          </p>
+          <div class="achievement-trophy-card glass-card p-4 border rounded-4 shadow-sm text-center">
+            <div class="trophy-glow mx-auto mb-3">
+              <i data-lucide="award" class="icon-xl text-primary"></i>
+            </div>
+            <h4 class="fw-bold mb-1">Code Enthusiast</h4>
+            <p class="small text-muted mb-0">Committed to solving complex computing challenges</p>
+          </div>
+        </div>
+        <div class="col-lg-7 ps-lg-5 achievements-list-col" id="achievements-items-col">
+          <div class="d-flex flex-column gap-3" id="achievements-list-target">
+            <!-- Achievements Injected -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-padding position-relative overflow-hidden">
+    <div class="ambient-glow glow-1 opacity-20"></div>
+    <div class="ambient-glow glow-3 opacity-20"></div>
+
+    <div class="container position-relative z-3">
+      <div class="glass-card border rounded-4 p-5 shadow-lg max-w-900 mx-auto" id="contact-wrapper-card">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-5 mb-lg-0 text-center text-lg-start contact-details-col" id="contact-details-col">
+            <span class="section-tag">Get in Touch</span>
+            <h2 class="fw-bold mb-4">Let's Connect</h2>
+            <p class="text-muted mb-5">
+              Have a project in mind, a job opportunity, or just want to chat? Drop me a message!
+            </p>
+            
+            <div class="d-flex flex-column gap-4" id="contact-details-list">
+              <div class="d-flex align-items-center gap-3">
+                <div class="contact-icon bg-light text-primary rounded-3 p-2.5">
+                  <i data-lucide="mail" class="icon-md"></i>
+                </div>
+                <div>
+                  <h4 class="h7 text-muted mb-0 fw-semibold">Email</h4>
+                  <p class="mb-0 fw-bold text-dark font-monospace fs-7" id="contact-email-val">Loading...</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <div class="contact-icon bg-light text-primary rounded-3 p-2.5">
+                  <i data-lucide="phone" class="icon-md"></i>
+                </div>
+                <div>
+                  <h4 class="h7 text-muted mb-0 fw-semibold">Phone</h4>
+                  <p class="mb-0 fw-bold text-dark font-monospace fs-7" id="contact-phone-val">Loading...</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3">
+                <div class="contact-icon bg-light text-primary rounded-3 p-2.5">
+                  <i data-lucide="map-pin" class="icon-md"></i>
+                </div>
+                <div>
+                  <h4 class="h7 text-muted mb-0 fw-semibold">Location</h4>
+                  <p class="mb-0 fw-bold text-dark fs-7" id="contact-location-val">Loading...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-7 ps-lg-4 contact-form-col" id="contact-form-col">
+            <form id="portfolio-contact-form" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input type="text" class="form-control rounded-3" id="contactName" placeholder="Your Name" required>
+                    <label for="contactName"><i data-lucide="user" class="icon-sm text-muted me-1"></i>Name</label>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input type="email" class="form-control rounded-3" id="contactEmail" placeholder="name@example.com" required>
+                    <label for="contactEmail"><i data-lucide="mail" class="icon-sm text-muted me-1"></i>Email</label>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input type="text" class="form-control rounded-3" id="contactSubject" placeholder="Subject" required>
+                    <label for="contactSubject"><i data-lucide="edit-3" class="icon-sm text-muted me-1"></i>Subject</label>
+                    <div class="invalid-feedback">Please write a subject.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control rounded-3 h-150" id="contactMessage" placeholder="Leave a message here" required></textarea>
+                    <label for="contactMessage"><i data-lucide="message-square" class="icon-sm text-muted me-1"></i>Message</label>
+                    <div class="invalid-feedback">Please write your message.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary btn-lg w-100 rounded-pill shadow-sm glow-button py-2.5 mt-2" type="submit" id="contact-submit-btn">
+                    Send Message <i data-lucide="send" class="icon-md ms-2"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-top py-5 text-center">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-column flex-md-row gap-3 mb-4" id="footer-top-row">
+        <a class="navbar-brand d-flex align-items-center" href="#hero" id="footer-logo">
+          <span class="logo-badge">KSB</span>
+          <span class="logo-text fw-bold ms-2">Sudheer Basha</span>
+        </a>
+        <p class="text-muted small mb-0" id="footer-meta">
+          Designed with Apple-inspired White Theme & Bootstrap 5
+        </p>
+      </div>
+      <div class="border-top pt-4 d-flex justify-content-between align-items-center flex-column flex-md-row gap-3" id="footer-bottom-row">
+        <p class="text-muted small mb-0" id="copyright-text">
+          &copy; 2026 Kalamalla Sudheer Basha. All rights reserved.
+        </p>
+        <div class="d-flex gap-3 small" id="footer-routing-links">
+          <a href="/tracker.html" class="text-muted text-decoration-none hover-link" id="footer-crm-link">LinkedIn Outreach CRM Tracker</a>
+          <a href="/portfolio-admin.html" class="text-muted text-decoration-none hover-link" id="footer-admin-link">Portfolio Manager</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Modal: Project Details Dynamic Popup -->
+  <div class="modal fade" id="projectDetailsModal" tabindex="-1" aria-labelledby="projectDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden">
+        <div class="modal-header border-bottom-0 pb-0 position-relative">
+          <button type="button" class="btn-close position-absolute top-3 end-3 shadow-sm rounded-circle p-2 bg-white" data-bs-dismiss="modal" aria-label="Close" id="modal-close-btn"></button>
+        </div>
+        <div class="modal-body p-4 pt-2" id="project-modal-body">
+          <div class="text-center mb-4">
+            <span class="badge bg-light text-primary border rounded-pill px-3 py-1.5 mb-2 font-monospace fs-8" id="modal-project-tech">Tech Stack</span>
+            <h3 class="modal-title fw-bold text-dark" id="modal-project-title">Project Title</h3>
+          </div>
+          <div class="project-modal-image-wrapper rounded-4 overflow-hidden mb-4 shadow border">
+            <img src="" id="modal-project-image" alt="Project Screenshot" class="w-100 object-fit-cover max-h-350">
+          </div>
+          
+          <div class="mb-4">
+            <h4 class="h6 text-muted fw-bold text-uppercase tracking-wider">Overview</h4>
+            <p class="text-dark-gray" id="modal-project-description">Overview goes here.</p>
+          </div>
+
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <div class="border rounded-4 p-3 bg-light shadow-sm h-100">
+                <h5 class="h6 fw-bold text-danger d-flex align-items-center gap-2 mb-2">
+                  <i data-lucide="alert-triangle" class="icon-sm"></i> Core Challenge
+                </h5>
+                <p class="small text-muted mb-0" id="modal-project-challenge">Challenge description.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="border rounded-4 p-3 bg-light shadow-sm h-100">
+                <h5 class="h6 fw-bold text-success d-flex align-items-center gap-2 mb-2">
+                  <i data-lucide="check-circle-2" class="icon-sm"></i> Applied Solution
+                </h5>
+                <p class="small text-muted mb-0" id="modal-project-solution">Solution description.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4 border-top pt-3">
+            <h5 class="h6 text-muted fw-bold text-uppercase tracking-wider">Future Scope</h5>
+            <p class="small text-muted" id="modal-project-future">Scope details...</p>
+          </div>
+
+          <div class="d-flex justify-content-end gap-3 mt-4 border-top pt-3" id="modal-project-links">
+            <a href="#" class="btn btn-outline-dark rounded-pill px-4" id="modal-github-link" target="_blank">
+              <i data-lucide="github" class="icon-sm me-1"></i> GitHub
+            </a>
+            <a href="#" class="btn btn-primary rounded-pill px-4 glow-button" id="modal-live-link" target="_blank">
+              <i data-lucide="external-link" class="icon-sm me-1"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Template for Form Feeds -->
+  <div class="toast-container position-fixed bottom-3 end-3 z-5">
+    <div id="contactToast" class="toast align-items-center border-0 rounded-3 shadow" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body d-flex align-items-center gap-2">
+          <i data-lucide="check-circle" class="text-success" id="toast-icon"></i>
+          <span id="toast-message-text">Message sent successfully!</span>
+        </div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" id="toast-close-btn"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: CDNs for GSAP, Three.js, Lenis, Lucide, Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Local Script -->
+  <script src="/portfolio.js"></script>
+</body>
+</html>

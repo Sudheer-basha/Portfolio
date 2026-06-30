@@ -1,0 +1,7 @@
+node_modules/
+.env
+public/uploads/*
+!public/uploads/avatar.jpg
+!public/uploads/Kalamalla_Sudheer_Basha_Resume.pdf
+.DS_Store
+*.log
