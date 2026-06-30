@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "challenge": "Implementing progression locks to guarantee concept mastery and automated script feedback.",
         "solution": "Engineered an automated Python script evaluator providing line-by-line constructive feedback, and a dynamic PDF certificate generator using ReportLab's vector coordinates.",
         "future": "Integrate more coding languages and expand course catalogs.",
-        "liveLink": "#",
+        "liveLink": "tracker.html",
         "githubLink": "https://github.com/Sudheer-basha/AI-Tutor-For-Data-Science",
         "screenshot": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop"
       },
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "challenge": "Handling complex parsing of PDFs and rewriting bullet points while maintaining factual consistency.",
         "solution": "Leveraged Groq's Llama 3.3 70B model to dynamically rewrite and optimize candidate summary and bullet points to match target job descriptions while ensuring factual consistency. Built a local CRM database dashboard tracking companies, role match scores, application status, and automated Word file generation.",
         "future": "Integrate multi-file batch parsing and template customization.",
-        "liveLink": "#",
+        "liveLink": "tracker.html",
         "githubLink": "https://github.com/Sudheer-basha/AI-Resume-Writer-In-Local-System",
         "screenshot": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop"
       },
