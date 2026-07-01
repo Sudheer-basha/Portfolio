@@ -550,6 +550,34 @@ document.addEventListener('DOMContentLoaded', () => {
         if (camera) {
           camera.position.y = 0.2 - window.scrollY * 0.007;
         }
+
+        // Custom active link highlight scrolling check
+        const sections = ['hero', 'about', 'skills', 'projects', 'timeline', 'certifications', 'contact'];
+        let currentSection = 'hero';
+        
+        sections.forEach(secId => {
+          const el = document.getElementById(secId);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            // If section top is above middle of viewport
+            if (rect.top <= 160) {
+              currentSection = secId;
+            }
+          }
+        });
+        
+        // Highlight current section link
+        const navLinks = document.querySelectorAll('#main-nav .nav-link');
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href) {
+            if (href === `#${currentSection}` || (currentSection === 'hero' && href === '#hero')) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          }
+        });
       });
 
       function raf(time) {
