@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "location": "Hyderabad, Telangana",
       "github": "https://github.com/Sudheer-basha",
       "linkedin": "https://www.linkedin.com/in/kalamalla-sudheer-basha-43793b298/",
+      "instagram": "https://www.instagram.com/_suudhir_06/",
       "avatar": "uploads/avatar.jpg",
       "resumeUrl": "uploads/Kalamalla_Sudheer_Basha_Resume.pdf",
       "bio": "Motivated MCA graduate and IT professional with hands-on experience in full life-cycle software implementation, business & technology solutions, and business user engagement. Proficient in Python, SQL, React.js, FastAPI, Power BI, and Docker.",
@@ -225,6 +226,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const linkedinLink = document.getElementById('hero-linkedin-link');
     if (linkedinLink) linkedinLink.href = profile.linkedin || '#';
+
+    const instagramLink = document.getElementById('hero-instagram-link');
+    if (instagramLink) instagramLink.href = profile.instagram || '#';
     
     const emailLink = document.getElementById('hero-email-link');
     if (emailLink) emailLink.href = `mailto:${profile.email}`;
